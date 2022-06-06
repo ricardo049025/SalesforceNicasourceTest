@@ -1,0 +1,119 @@
+<template>
+
+    <!-- Account stept -->
+    <template if:true={stept1}>
+
+        <div class="slds-card" style="margin: auto;width: 50%;">
+            <!-- Header -->
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="standard:customers" alternative-text="Audio file" ></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <center><span class="slds-page-header__title slds-truncate">New Account</span></center>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="slds-card__body slds-card__body_inner">
+                <lightning-record-edit-form object-api-name="Account">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field  field-name="OwnerId" name="Owner"> </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Name" name="Name" onchange={handleInputChangeForm}> </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Phone" name="Phone" onchange={handleInputChangeForm}> </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Fax" name="Fax" onchange={handleInputChangeForm}> </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Website" name="Website" onchange={handleInputChangeForm}> </lightning-input-field>
+                        </div>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+            
+            <footer class="slds-card__footer">
+                <lightning-button variant="destructive" label="Clear" title="Primary action"  class="slds-m-left_x-small"></lightning-button>    
+                <lightning-button variant="brand" label="Save" title="Primary action"  class="slds-m-left_x-small" onclick={handlerSaveAccount}></lightning-button>    
+                <lightning-button variant="success" label="Next" title="Primary action"  class="slds-m-left_x-small" onclick={nextStept} disabled={enableStept2}></lightning-button>    
+            </footer>
+
+        </div>
+
+    </template>
+
+    <!-- Contract Stept -->
+
+    <template if:true={stept2}>
+
+        <div class="slds-card" style="margin: auto;width: 50%;">
+            <!-- Header -->
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="standard:contract_payment" alternative-text="Contract" ></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <center><span class="slds-page-header__title slds-truncate">Contract</span></center>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="slds-card__body slds-card__body_inner">
+                <lightning-record-edit-form object-api-name="Contract">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name="AccountId" name="Name" aria-readonly="true"> </lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="OwnerExpirationNotice" name="OwnerExpirationNotice" onchange={handleInputChangeFormContract}></lightning-input-field>
+                        </div>	
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="ContractTerm" name="ContractTerm" onchange={handleInputChangeFormContract}> </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="StartDate" name="StartDate" onchange={handleInputChangeFormContract}> </lightning-input-field>
+                        </div>
+                    </div>
+                    </lightning-record-edit-form>
+            </div>
+            
+            <footer class="slds-card__footer">
+                <lightning-button variant="destructive" label="Clear" title="Primary action"  class="slds-m-left_x-small"></lightning-button>    
+                <lightning-button variant="brand" label="Save" title="Primary action"  class="slds-m-left_x-small" onclick={handlerSaveContract}></lightning-button>    
+            </footer>   
+
+        </div>
+
+    </template>
+</template>
