@@ -1,0 +1,19 @@
+<apex:page standardController="Account" recordSetVar="accounts">
+
+    <apex:pageBlock title="Viewing Accounts">
+        <apex:form id="theForm">
+            <apex:pageblockSection >
+                <apex:dataList value="{!accounts}" var="a">
+                    {!a.Name}
+                </apex:dataList>
+            </apex:pageblockSection>
+            <apex:panelGrid columns="4">
+                <apex:commandLink action="{!previous}">Prev</apex:commandLink>
+                <apex:commandLink action="{!next}">Next</apex:commandLink>
+                <apex:commandLink action="{!first}">First</apex:commandLink>
+                <apex:commandLink action="{!last}">Last</apex:commandLink>
+            </apex:panelGrid>
+        </apex:form>
+    </apex:pageBlock>
+
+</apex:page>

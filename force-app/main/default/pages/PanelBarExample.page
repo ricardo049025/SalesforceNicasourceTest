@@ -1,0 +1,10 @@
+<apex:page >
+
+    <apex:panelBar >
+    
+        <apex:panelbarItem label="Item1"> Hello How are you ?</apex:panelbarItem>
+        <apex:panelbarItem label="Item2"> I am the founder of mytutorialRack</apex:panelbarItem>
+        <apex:panelbarItem label="Item3"> myTutorialRack.com</apex:panelbarItem>
+    </apex:panelBar>
+
+</apex:page>
