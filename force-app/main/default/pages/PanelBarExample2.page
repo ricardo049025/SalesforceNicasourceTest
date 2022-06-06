@@ -1,0 +1,10 @@
+<apex:page >
+ 
+    <apex:panelbar >
+    
+        <apex:panelBarItem label="Item 1" onenter="alert('Entering item 1')" onleave="alert('leaving item 1')"> my tutorial rack </apex:panelBarItem>
+        <apex:panelBarItem label="Item 2" onenter="alert('Entering item 2')" onleave="alert('leaving item 2')"> my site example </apex:panelBarItem>
+    
+    </apex:panelbar>
+ 
+</apex:page>

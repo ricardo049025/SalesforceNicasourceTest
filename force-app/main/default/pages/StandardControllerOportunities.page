@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity">
+    <apex:form >    
+        <apex:pageBlock TItle="Opportunity Block">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Delete this record" action="{!delete}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Opportunity Section">
+                <apex:outputfield value="{!opportunity.Name}"/>
+                <apex:outputfield value="{!opportunity.CloseDate}"/>
+                <apex:outputfield value="{!opportunity.StageName}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>
